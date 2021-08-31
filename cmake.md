@@ -1,6 +1,6 @@
-### cmake
+## cmake
 
-#### find_package使用
+### find_package使用
 
 当需要使用一个第三方库时，需要知道三件事，去哪儿找头文件，去哪儿找库文件，需要链接的库文件的名字，借助cmake的finder，可以帮我们简化这件事，例如当要使用一个第三方库curl时
 
@@ -26,7 +26,10 @@ if(CURL_FOUND)
 endif(CURL_FOUND)
 ```
 
+### cmake命令简介
 
+* add_definitions命令现在已经被add_compile_definitions(-DENABLED)取代，可以使用它定义一些宏，在代码里面使用#ifdef ENABLED #endif事这一块的代码生效
+* option命令，设置自定义的宏,option(ENABLED "this is my message" ON),编译时可以使用cmake -DENABLED=ON设置该宏的值为有效
 
 
 
