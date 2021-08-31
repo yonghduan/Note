@@ -11,7 +11,7 @@ static_cast相当于C语言中的强制类型转换，静态转换，也就是�
 
 注意：static-cast不能去掉表达式的const和volatile属性，所以不能支持两者之间的转换，并且，static-cast不能支持两个具体类型指针之间的转换，因为转换后是不安全的；也不能将一个具体的值转换为指针类型，因为该值指向的内存可能还没有分配，这是非常危险的。
 
----
+
 
 const-cast用于将const/volatile类型转换为非const/volatile类型
 
