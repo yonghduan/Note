@@ -17,7 +17,9 @@ const-cast用于将const/volatile类型转换为非const/volatile类型
 
 +++
 
-+ cout << char类型的指针实则是打印出了指针所指向的字符串
+### 小知识点
+
++ cout << char类型的指针实则是打印出了指针所指向的字符串，将char类型指针转换为void * 类型可以打印出char型值的地址
 
 
 
