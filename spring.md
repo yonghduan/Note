@@ -115,3 +115,18 @@ springmvc是一种基于java实现的请求驱动类型的轻量级web框架，�
 > 4.将controller使用注解配置到Spring容器中（@Controller）
 >
 > 5.配置spring-xml文件（配置组件扫描）
+
+执行流程：请求到达前端控制器（DispatcherSertvlet），然后由它请求处理器映射器，查找处理这个请求的路径，返回一串处理器执行链；然后由前端控制器请求处理器适配器，调用对应的资源，即Conteoller，然后它返回modelandview，然后把它交给前端控制器，然后把它交给视图解析器，返回给前端控制器view，然后对view进行渲染，然后响应用户
+
+***
+
+组件解析：
+
+> * @RequestingMapping:建立url和controller之间的关系，可以用在方法上和类上，加在类上需要和方法上的mapping拼接访问controller,参数有value和method，当只有一个参数时可以省略value，method用于指定访问方法；params：用于限定请求参数条件。它支持简单的表达式，需要请求参数的key和value必须和配置的一模一样
+> * 在进行组件扫描时，springmvc只扫描controller，而spring扫描其他，如业务层持久层等
+> * 视图解析器配置：可以配置prefix和suffix，换可以配置重定向和转发等
+
+springmvc的数据响应方式：
+
+> 1. 页面跳转：直接返回字符串(与视图解析器中的前后缀拼接后返回）或通过modelandview对象返回
+
