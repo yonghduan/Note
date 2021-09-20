@@ -80,10 +80,38 @@ Spring原始注解：spring是轻代码而重配置的框架，配置比较繁�
 >
 > @Scope：配置单例还是多例
 >
-> @PostConstruct
+> @PostConstruct：配置初始化方法
 >
-> @PreDestroy
+> @PreDestroy：配置结束方法
 
 使用注解进行开发时，要进行组件扫描，告诉spring扫描注解,使用标签为<context:component-scan base-package="">
 
-Spring新注解：一些不是自定义类的配置可以用新注解代替
+Spring新注解：一些不是自定义类的配置，组件扫描，加载property配置文件，import标签等，无法用注解代替，新注解则是解决这些问题
+
+> @Configuration：用于指定当前类是一个spring配置类，当创建容器时会从该类上加载注解
+>
+> @ComponentScan：用于指定spring在初始化容器时要扫描的包，作用和xml中的组件扫描标签一样
+>
+> @Bean：使用在方法上，标注该方法的返回值存储到spring容器中
+>
+> @PropertySource：用于加载.properties文件中的配置
+>
+> @Import：用于导入其他配置类
+
+### Spring与web环境集成
+
+### SpringMVC
+
+springmvc是一种基于java实现的请求驱动类型的轻量级web框架，属于SpringFrameWork的后续产品，它通过一套注解，让一个简单的java类成为处理请求的控制器，而无需实现任何借口
+
+开发步骤：
+
+> 1.导入SpringMVC包
+>
+> 2.配置servlet
+>
+> 3.编写POJO
+>
+> 4.将controller使用注解配置到Spring容器中（@Controller）
+>
+> 5.配置spring-xml文件（配置组件扫描）
