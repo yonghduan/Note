@@ -120,7 +120,7 @@ springmvc是一种基于java实现的请求驱动类型的轻量级web框架，�
 
 ***
 
-组件解析：
+#### 组件解析：
 
 > * @RequestingMapping:建立url和controller之间的关系，可以用在方法上和类上，加在类上需要和方法上的mapping拼接访问controller,参数有value和method，当只有一个参数时可以省略value，method用于指定访问方法；params：用于限定请求参数条件。它支持简单的表达式，需要请求参数的key和value必须和配置的一模一样
 > * 在进行组件扫描时，springmvc只扫描controller，而spring扫描其他，如业务层持久层等
@@ -135,6 +135,25 @@ springmvc的数据响应方式：
 第一种方法，通过获取响应对象回写数据；通过@ResponseBody注解告诉springmvc框架返回的内容为响应体内容，不进行页面跳转
 
 返回对象时以json格式返回
+
+#### springmvc获得请求数据
+
+客户端请求参数的格式是name= value&name=value
+
+服务器端要获得请求的参数，mvc框架可以获得如下类型的参数：
+
+> * 基本数据类型
+> * POJO类型数据
+> * 数组类型数据
+> * 集合类型数据
+
+获得基本类型参数：Controller中的业务方法的参数名称要与请求参数的name一致，参数值会自动映射匹配
+
+获得POJO类型参数：Controller中的业务方法的pojo参数的属性名和请求参数的name一致，参数值会自动映射
+
+获得数组类型参数：Controller中的业务方法数组名称与请求参数的name一致，参数值会自动匹配
+
+获得集合类型数据：要将集合参数包装到一个pojo中；当使用ajax提交时，可以指定contentType为json形式，在方法参数位置使用RequestBody注解即可，直接收集集合数据而无需进行pojo封装
 
 
 
