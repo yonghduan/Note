@@ -28,3 +28,22 @@ sudo apt-get install linux-image-5.13
 
 5.磁盘分区：设置/boot和/分区，给/boot 3G空间，然后剩下都留给/分区。每一个分区都选择逻辑分区，空间起始位置，然后选择对应挂载点即可
 
+# 双系统linux引导修复
+
+1. 用启动u盘进入到待安装的mint系统，连接好网络，输入：
+
+   ```
+   sudo add-apt-repository ppa:yannubuntu/boot-repair && sudo apt-get update
+   ```
+
+   添加boot-repair所在的源
+
+2. 输入：
+
+   ```
+   sudo apt-get install -y boot-repair
+   ```
+
+   安装boot-repair工具
+
+3. 输入boot-repair，启动工具，并选择recommended repair，然后开始修复，修复完成如果成功的话重新开机即可看到linux启动项
