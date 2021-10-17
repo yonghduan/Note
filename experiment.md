@@ -47,3 +47,29 @@ sudo apt-get install linux-image-5.13
    安装boot-repair工具
 
 3. 输入boot-repair，启动工具，并选择recommended repair，然后开始修复，修复完成如果成功的话重新开机即可看到linux启动项
+
+# ubuntu发送邮件
+
+1. 安装heirloom-mailx
+
+   ```
+   sudo apt-get update && sudo apt-get install -y heirloom-mailx
+   ```
+
+2. 配置/etc/nail.rc
+
+   ```
+   set from=429240967@qq.com
+   set smtp=smtp.qq.com
+   set smtp-auth-user=429240967@qq.com
+   set smtp-auth-password=runoob
+   set smtp-auth=login
+   ```
+
+3. 在命令行发送邮件给qq邮箱用户
+
+   ```
+   echo "邮件内容" | heirloom-mailx -s "邮件标题" 123@qq.com
+   ```
+
+   
