@@ -72,4 +72,10 @@ sudo apt-get install linux-image-5.13
    echo "邮件内容" | heirloom-mailx -s "邮件标题" 123@qq.com
    ```
 
+   # 生成ssh的方法
+   
+   ```
+   ssh-keygen -t rsa
+   ```
+   
    
