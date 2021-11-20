@@ -72,4 +72,12 @@ sudo apt-get install linux-image-5.13
    echo "邮件内容" | heirloom-mailx -s "邮件标题" 123@qq.com
    ```
 
-   
+
+# 重新安装ca
+
+```
+sudo apt-get install --reinstall ca-certificates
+sudo apt-get update
+```
+
+然后重新运行安装包的命令
